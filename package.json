@@ -21,6 +21,7 @@
     "lerna": "^5.0.0"
   },
   "dependencies": {
+    "import-local": "^3.1.0",
     "semver": "^7.3.7"
   }
 }

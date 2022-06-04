@@ -1,4 +1,10 @@
 #! /usr/bin/env node
 
-console.log('core.js')
+let pkg = require('../package.json')
 
+checkVersion();
+
+
+function checkVersion() {
+    console.log(pkg.version)
+}
