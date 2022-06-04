@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "前端脚手架代码",
   "main": "index.js",
-  "bin": {
-    "chenhaijun-cli": "index.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "chenhaijun-cli"
