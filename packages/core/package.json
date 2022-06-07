@@ -29,5 +29,8 @@
   },
   "bugs": {
     "url": "https://github.com/chenhaijun818/cli/issues"
+  },
+  "dependencies": {
+    "commander": "^9.3.0"
   }
 }
