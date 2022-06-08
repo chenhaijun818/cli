@@ -1,14 +1,11 @@
 {
-  "name": "@lizen/core",
-  "version": "0.0.2",
+  "name": "@lizen/init",
+  "version": "0.0.0",
   "description": "> TODO: description",
   "author": "陈海俊 <353376352@qq.com>",
-  "homepage": "https://github.com/chenhaijun818/cli/tree/main/core/cli#readme",
+  "homepage": "https://github.com/chenhaijun818/cli/tree/main/commands/init#readme",
   "license": "ISC",
-  "main": "lib/cli.js",
-  "bin": {
-    "lizen": "index.js"
-  },
+  "main": "lib/init.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -16,10 +13,6 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chenhaijun818/cli.git"
@@ -29,9 +22,5 @@
   },
   "bugs": {
     "url": "https://github.com/chenhaijun818/cli/issues"
-  },
-  "dependencies": {
-    "commander": "^9.3.0",
-    "@lizen/init": "file:../../commands/init"
   }
 }
