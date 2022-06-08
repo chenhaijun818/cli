@@ -1,11 +1,10 @@
 {
-  "name": "chenhaijun-cli",
+  "name": "lizen",
   "version": "0.0.1",
   "description": "前端脚手架代码",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "chenhaijun-cli"
+    "start": "lizen"
   },
   "repository": {
     "type": "git",
@@ -18,10 +17,6 @@
   },
   "homepage": "https://github.com/chenhaijun818/cli#readme",
   "devDependencies": {
-    "lerna": "^5.0.0"
-  },
-  "dependencies": {
-    "import-local": "^3.1.0",
-    "semver": "^7.3.7"
+    "lerna": "^5.1.0"
   }
 }

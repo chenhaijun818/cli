@@ -1,11 +1,14 @@
 {
-  "name": "@chenhaijun-cli/utils",
-  "version": "0.0.0",
+  "name": "@lizen/core",
+  "version": "0.0.2",
   "description": "> TODO: description",
-  "author": "陈海俊 <www.353376352@qq.com>",
-  "homepage": "https://github.com/chenhaijun818/cli/tree/main/packages/utils#readme",
+  "author": "陈海俊 <353376352@qq.com>",
+  "homepage": "https://github.com/chenhaijun818/cli/tree/main/core/cli#readme",
   "license": "ISC",
-  "main": "lib/utils.js",
+  "main": "lib/cli.js",
+  "bin": {
+    "lizen": "index.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -13,6 +16,10 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chenhaijun818/cli.git"
