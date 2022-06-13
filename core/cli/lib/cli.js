@@ -1,7 +1,18 @@
 'use strict';
 
+const path = require('path');
+
+const rootCheck = require('root-check');
 const pkg = require("../package.json");
 const init = require("@lizen/init");
+const pathExists = require('path-exists').sync;
+const userHome = require('user-home');
+const colors = require('colors/safe');
+const dotenv = require('dotenv');
+const {Command} = require("commander");
+
+const program = new Command();
+
 module.exports = cli;
 
 function cli() {
@@ -12,7 +23,9 @@ function cli() {
 function prepare() {
     console.log('prepare...');
     checkPkgVersion();
-    checkRoot();
+    rootCheck();
+    checkUserHome();
+    checkEnv();
 }
 
 function registerCommand() {
@@ -31,14 +44,25 @@ function registerCommand() {
         console.log('unknown command:', e.shift())
     });
 
-    program.parse(process.argv)
+    program.parse(process.argv);
 }
 
 function checkPkgVersion() {
-    log.info('cli', pkg.version);
+    console.log('cli', pkg.version);
 }
 
-function checkRoot() {
-    const rootCheck = require('root-check');
-    rootCheck();
+function checkUserHome() {
+    if (!userHome || !pathExists(userHome)) {
+        throw new Error(colors.red('当前登录用户主目录不存在！'));
+    }
+}
+
+function checkEnv() {
+    const dotenvPath = path.resolve(userHome, '.env');
+    if (pathExists(dotenvPath)) {
+        const config = dotenv.config({
+            path: path.resolve(userHome, '.env')
+        });
+        console.log(config);
+    }
 }
