@@ -1,5 +1,5 @@
 {
-  "name": "@lizen/log",
+  "name": "@coomic/log",
   "version": "0.0.4",
   "description": "> TODO: description",
   "author": "陈海俊 <www.353376352@qq.com>",
@@ -14,7 +14,8 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmmirror.com/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "repository": {
     "type": "git",
