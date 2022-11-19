@@ -86,8 +86,8 @@ function checkUserHome() {
 // 检查环境变量
 function checkEnv() {
     const dotenvPath = path.resolve(userHome, '.env');
-    console.log(dotenvPath)
-    console.log(pathExists(dotenvPath))
+    // console.log(dotenvPath)
+    // console.log(pathExists(dotenvPath))
     if (pathExists(dotenvPath)) {
         const config = dotenv.config({
             path: path.resolve(userHome, '.env')
@@ -110,10 +110,7 @@ async function checkUpdate() {
     if (!res.data || !res.data.versions) {
         return;
     }
-    let versions = Object.keys(res.data.versions);
-    console.log(versions)
-    versions = versions.filter(v => {
-        return semver.satisfies(v, `^${currentVersion}`)
-    });
-    console.log(versions)
+    const versions = Object.keys(res.data.versions);
+    const latestVersion = semver.maxSatisfying(versions, `^${currentVersion}`);
+    console.log('latest:', latestVersion)
 }
