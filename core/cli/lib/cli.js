@@ -112,5 +112,5 @@ async function checkUpdate() {
     }
     const versions = Object.keys(res.data.versions);
     const latestVersion = semver.maxSatisfying(versions, `^${currentVersion}`);
-    console.log('latest:', latestVersion)
+    console.log('1latest:', latestVersion)
 }
