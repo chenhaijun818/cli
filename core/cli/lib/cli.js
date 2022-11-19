@@ -110,6 +110,10 @@ async function checkUpdate() {
     if (!res.data || !res.data.versions) {
         return;
     }
-    const versions = Object.keys(res.data.versions)
+    let versions = Object.keys(res.data.versions);
+    console.log(versions)
+    versions = versions.filter(v => {
+        return semver.satisfies(v, `^${currentVersion}`)
+    });
     console.log(versions)
 }
