@@ -1,11 +1,11 @@
-# `@lizen/log`
+# `@coomic/log`
 
 > TODO: description
 
 ## Usage
 
 ```
-const log = require('@lizen/log');
+const log = require('@coomic/log');
 
 // TODO: DEMONSTRATE API
 ```

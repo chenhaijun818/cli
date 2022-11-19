@@ -1,4 +1,4 @@
-const Package = require('@lizen/package');
+const Package = require('@coomic/package');
 
 function exec() {
     let package = new Package();

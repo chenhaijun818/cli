@@ -13,8 +13,8 @@ const minimist = require('minimist')
 const axios = require('axios')
 // const urlJoin = require('url-join')
 
-const init = require("@lizen/init");
-const npmlog = require('@lizen/log')
+const init = require("@coomic/init");
+const npmlog = require('@coomic/log')
 const pkg = require("../package.json");
 const config = require('./config')
 

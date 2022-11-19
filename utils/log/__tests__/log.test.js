@@ -1,7 +1,5 @@
 'use strict';
 
-const log = require('..');
-
-describe('@lizen/log', () => {
+describe('@coomic/log', () => {
     it('needs tests');
 });

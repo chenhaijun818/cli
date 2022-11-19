@@ -1,11 +1,11 @@
-# `@lizen/package`
+# `@coomic/package`
 
 > TODO: description
 
 ## Usage
 
 ```
-const package = require('@lizen/package');
+const package = require('@coomic/package');
 
 // TODO: DEMONSTRATE API
 ```

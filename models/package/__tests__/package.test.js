@@ -1,7 +1,5 @@
 'use strict';
 
-const package = require('..');
-
-describe('@lizen/package', () => {
+describe('@coomic/package', () => {
     it('needs tests');
 });
