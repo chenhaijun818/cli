@@ -1,9 +1,9 @@
 {
-  "name": "@coomic/init",
-  "version": "1.0.3",
+  "name": "@lizen/init",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "陈海俊 <353376352@qq.com>",
-  "homepage": "https://github.com/chenhaijun818/cli/tree/main/commands/init#readme",
+  "homepage": "https://github.com/chenhaijun818/lizen/tree/main/commands/init#readme",
   "license": "ISC",
   "main": "lib/init.js",
   "directories": {
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenhaijun818/cli.git"
+    "url": "git+https://github.com/chenhaijun818/lizen.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/chenhaijun818/cli/issues"
+    "url": "https://github.com/chenhaijun818/lizen/issues"
   }
 }

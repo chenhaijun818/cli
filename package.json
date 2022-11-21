@@ -1,6 +1,6 @@
 {
-  "name": "coomic",
-  "version": "0.0.1",
+  "name": "lizen",
+  "version": "1.0.0",
   "description": "前端脚手架代码",
   "main": "index.js",
   "scripts": {

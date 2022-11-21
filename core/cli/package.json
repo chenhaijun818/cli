@@ -1,9 +1,9 @@
 {
-  "name": "@coomic/core",
-  "version": "1.0.3",
+  "name": "@lizen/core",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "陈海俊 <353376352@qq.com>",
-  "homepage": "https://github.com/chenhaijun818/cli/tree/main/core/lizen#readme",
+  "homepage": "https://github.com/chenhaijun818/lizen/tree/main/core/lizen#readme",
   "license": "ISC",
   "main": "lib/cli.js",
   "bin": {
