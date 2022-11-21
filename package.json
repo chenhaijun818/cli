@@ -18,5 +18,8 @@
   "homepage": "https://github.com/chenhaijun818/lizen#readme",
   "devDependencies": {
     "lerna": "^5.1.0"
+  },
+  "dependencies": {
+    "commander": "^9.4.1"
   }
 }
