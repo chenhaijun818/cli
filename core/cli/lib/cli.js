@@ -9,12 +9,10 @@ const colors = require('colors/safe');
 const semver = require('semver')
 const dotenv = require('dotenv');
 const {Command} = require("commander");
-const minimist = require('minimist')
 const axios = require('axios')
-// const urlJoin = require('url-join')
 
-const init = require("@coomic/init");
-const npmlog = require('@coomic/log')
+const init = require("@lizen/init");
+const npmlog = require('@lizen/log')
 const pkg = require("../package.json");
 const config = require('./config')
 
@@ -38,25 +36,35 @@ function prepare() {
     rootCheck();
     checkUserHome();
     checkEnv();
-    checkArgs();
     checkUpdate();
 }
 
 // 注册命令
 function registerCommand() {
     program
-        .name(Object.keys(pkg.bin)[0])
+        .name('lizen')
         .usage('<command> [options]')
-        .version(pkg.version);
+        .version(pkg.version)
+        .option('-d, --debug', '开启调试模式')
+        .option('-t, --target <target>', '指定本地调试文件')
 
-    program.command('init [name]').option('-f, --force', '是否强制初始化').action(init);
+    program.command('init <name>')
+        .option('-f, --force', '是否强制初始化')
+        .action(init);
 
+    // 处理debug模式
     program.on('option:debug', () => {
-        console.log('on debug')
+        npmlog.level = process.env.LOG_LEVEL = 'verbose'
     });
 
+    // 处理本地调试文件
+    program.on('option:target', () => {
+        process.env.TARGET_PATH = program.opts().target
+    })
+
     program.on('command:*', (e) => {
-        console.log('unknown command:', e.shift())
+        npmlog.info('unknown command:', e.shift());
+        program.outputHelp()
     });
 
     program.parse(process.argv);
@@ -64,7 +72,7 @@ function registerCommand() {
 
 // 检查脚手架版本号
 function checkPkgVersion() {
-    npmlog.info(`version:${pkg.version}`);
+    npmlog.info(`version: ${pkg.version}`);
 }
 
 // 检查node版本
@@ -86,20 +94,12 @@ function checkUserHome() {
 // 检查环境变量
 function checkEnv() {
     const dotenvPath = path.resolve(userHome, '.env');
-    // console.log(dotenvPath)
-    // console.log(pathExists(dotenvPath))
     if (pathExists(dotenvPath)) {
         const config = dotenv.config({
             path: path.resolve(userHome, '.env')
         });
         console.log(config);
     }
-}
-
-// 检查参数，处理debug模式
-function checkArgs() {
-    const args = minimist(process.argv.slice(2))
-    npmlog.level = process.env.LOG_LEVEL = args.debug ? 'verbose' : 'info';
 }
 
 // 检查更新
@@ -112,5 +112,7 @@ async function checkUpdate() {
     }
     const versions = Object.keys(res.data.versions);
     const latestVersion = semver.maxSatisfying(versions, `^${currentVersion}`);
-    npmlog.info('new version available:', colors.red(currentVersion), '->', colors.green(latestVersion))
+    if (latestVersion !== currentVersion) {
+        npmlog.info('new version available:', colors.red(currentVersion), '->', colors.green(latestVersion))
+    }
 }
