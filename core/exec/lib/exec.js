@@ -1,7 +1,9 @@
 'use strict';
-
-module.exports = exec;
+const Package = require('@lizen/package');
 
 function exec() {
-    // TODO
+    let pkg = new Package();
+    console.log(pkg);
 }
+
+module.exports = exec;
