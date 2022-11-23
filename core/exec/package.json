@@ -1,13 +1,13 @@
 {
   "name": "@lizen/exec",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "> TODO: description",
   "author": "陈海俊 <www.353376352@qq.com>",
   "homepage": "https://github.com/chenhaijun818/lizen/tree/main/core/exec#readme",
   "license": "ISC",
   "main": "./lib/exec.js",
   "dependencies": {
-    "@lizen/package": "^1.0.1"
+    "@lizen/package": "^1.0.3"
   },
   "directories": {
     "lib": "lib",
