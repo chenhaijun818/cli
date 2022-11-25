@@ -11,8 +11,8 @@ const dotenv = require('dotenv');
 const {Command} = require("commander");
 const axios = require('axios')
 
-const init = require("@lizen/init");
 const npmlog = require('@lizen/log')
+const exec = require('@lizen/exec')
 const pkg = require("../package.json");
 const config = require('./config')
 
@@ -50,7 +50,7 @@ function registerCommand() {
 
     program.command('init <name>')
         .option('-f, --force', '是否强制初始化')
-        .action(init);
+        .action(exec);
 
     // 处理debug模式
     program.on('option:debug', () => {
@@ -89,6 +89,7 @@ function checkUserHome() {
     if (!userHome || !pathExists(userHome)) {
         throw new Error(colors.red('当前登录用户主目录不存在！'));
     }
+    process.env.HOME_PATH = userHome
 }
 
 // 检查环境变量

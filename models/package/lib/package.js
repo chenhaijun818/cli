@@ -1,4 +1,7 @@
 'use strict';
+const path = require('path')
+
+const pkgDir = require('pkg-dir').sync
 
 class Package {
 
@@ -8,11 +11,13 @@ class Package {
     packageVersion = '';
 
     constructor(options) {
-        this.targetPath = options.targetPath;
+        if (!options) {
+            throw new Error('Package constructor error: 无效的参数')
+        }
+        this.targetPath = options.target;
         this.storePath = options.storePath;
         this.packageName = options.name;
         this.packageVersion = options.version;
-        console.log('package constructor')
     }
 
     install() {
@@ -22,6 +27,16 @@ class Package {
     }
 
     exists() {
+    }
+
+    getRootFilePath() {
+        const dir = pkgDir(this.targetPath);
+        if (dir) {
+            const pkg = require(path.join(dir, 'package.json'))
+            if (pkg) {
+                return path.join(dir, pkg.main).replace(/\\/g, '/')
+            }
+        }
     }
 
 }
