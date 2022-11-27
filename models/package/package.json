@@ -28,6 +28,7 @@
     "url": "https://github.com/chenhaijun818/lizen/issues"
   },
   "dependencies": {
+    "npminstall": "^6.6.1",
     "pkg-dir": "^5.0.0"
   }
 }
