@@ -1,6 +1,6 @@
 {
   "name": "@lizen/core",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "> TODO: description",
   "author": "陈海俊 <353376352@qq.com>",
   "homepage": "https://github.com/chenhaijun818/lizen/tree/main/core/lizen#readme",
@@ -31,7 +31,7 @@
     "url": "https://github.com/chenhaijun818/lizen/issues"
   },
   "dependencies": {
-    "@lizen/exec": "^1.0.2",
+    "@lizen/exec": "^1.0.4",
     "@lizen/init": "^1.0.2",
     "@lizen/log": "^1.0.2",
     "axios": "^1.1.3",
