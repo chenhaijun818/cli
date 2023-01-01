@@ -1,5 +1,6 @@
 {
   "packages": [
+    "cli",
     "core/*",
     "commands/*",
     "utils/*",
